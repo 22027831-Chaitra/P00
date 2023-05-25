@@ -3,44 +3,75 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class CalculatorTest {
 
-	@Before
-	public void setUpBeforeClass() throws Exception {
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
 	}
-	// code executed before all test methods
 
-	@After
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
 	public void setUp() throws Exception {
 	}
-	// code executed before each test method
 
-	@Test
-	public final void testAdd() {
-		//fail("Not yet implemented");
-		int a = 0;
-		int b = 8765;
-		
-		Calculator cal = new Calculator();
-		int actual = cal.add(a, b);
-		
-		int expected = 8765;
-		assertEquals (expected, actual);
-	}
-	@Test
-	public final void testSubstract() {
-		fail("Not yet implemented");
-	}
 	@After
 	public void tearDown() throws Exception {
 	}
-	// code executed before each test method
+
+	@Test
+	public void testAdd() {
+		//fail("Not yet implemented");
+		int a = 4321;
+		int b = 1234;
+			
+		Calculator cal = new Calculator();
+		int actual = cal.add(a, b); 
+			 
+		int expected = 5555;
+		assertEquals (expected, actual);
+	}
 	
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	// code executed before each test method
+	@Test
+	public final void testSubtract() {
+		int a = 9876;
+		int b = 4321;
+			
+		Calculator cal = new Calculator();
+		int actual = cal.subtract(a, b);
+			
+		int expected = 5555;
+		assertEquals (expected, actual);
+	}
+	
+	@Test
+	public final void testMultiple() {
+		int a = 14;
+		int b = 2;
+			
+		Calculator cal = new Calculator();
+		int actual = cal.multiply(a, b);
+			
+		int expected = 28;
+		assertEquals (expected, actual);
+			
+		}
+	
+	@Test
+	public final void testDivide() {
+			int a = 14;
+			int b = 2;
+			
+		Calculator cal = new Calculator();
+		int actual = cal.divide(a, b);
+			
+		int expected = 7;
+		assertEquals (expected, actual);
 	}
 
 }
